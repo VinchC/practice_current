@@ -1,5 +1,5 @@
-# https://www.youtube.com/watch?v=5UOSiCPu5aM&list=PLO_fdPEVlfKqMDNmCFzQISI2H_nJcEDJq&index=4&ab_channel=MachineLearnia
-# 5'37
+# https://www.youtube.com/watch?v=mSh4h-J0z1c&list=PLO_fdPEVlfKqMDNmCFzQISI2H_nJcEDJq&index=8&ab_channel=MachineLearnia
+# 0'00
 
 # print(False & True) => AND
 # print(False | True) => OR
@@ -74,7 +74,7 @@ def fibo(n: float):
 
 ##### Lists
 # list_1 = [1, 3, 7, 9, 12, 16, 30, 65, 86] # May be modified
-cities = ['Paris', 'Berlin', 'Londres', 'Bruxelles', 'New York']
+# cities = ['Paris', 'Berlin', 'Londres', 'Bruxelles', 'New York']
 # list_2 = [ list_1, cities]
 
 # print(list_2)
@@ -205,7 +205,7 @@ workbook = {
     "negative" : [],
     }
 
-print(workbook)
+# print(workbook)
 
 nb = [-3, -2, -1, 0, 1, 2, 3]
 
@@ -215,7 +215,116 @@ def sortnumbers(destination, nblist):
             destination["positive"].append(i)
         else:
             destination["negative"].append(i)
+    return destination
 
 sortnumbers(workbook, nb)
 
-print(workbook)
+# print(workbook)
+
+
+##### List and Dict Comprehension
+
+list_1 = []
+
+for i in range(10):
+    list_1.append(i**2)
+# print(list_1)
+
+# List Comprehension syntax
+list_2 = [i**2 for i in range(15)]
+# print(list_2)
+
+list_3 = [[i for i in range(3)] for j in range(4)]
+# print(list_3)
+
+
+# Dict Comprehension syntax 
+firstnames = ['Pierre', 'Jean', 'Julie', 'Sophie']
+
+ages = [16, 17, 18, 19]
+
+# Create a list with a couple k-v via an existing list and k as index
+diconames = { k:v for k, v in enumerate(firstnames)}
+# print(diconames)
+
+# Create a list with a couple k-v via two existing lists
+diconameswithages = { firstname:age for firstname, age in zip(firstnames, ages)}
+# print(diconameswithages)
+
+# Create a list with a couple k-v via two existing lists with a condition
+dicoadults = { firstname:age for (firstname, age) in zip(firstnames, ages) if age >= 18}
+# print(dicoadults)
+
+# Generate an object
+tuple_1 = tuple((i**2 for i in range(20)))
+# print(tuple_1)
+
+# Exercise 6/30
+kvdict = { k:v for k, v in enumerate(tuple_1) if k <= 21 }
+kvdict = { str(k): k**2 for k in range(0,20)}
+# print(kvdict)
+
+##### Built-in functions (7/30)
+# Change type of a variable
+x = 10
+# print(type(x))
+# print(type(float(x)))
+# print(type(str(x)))
+
+# Get specific values or sum of an array
+arraynb = [ 1, 2, 3, 4]
+# print(type(arraynb))
+# print(max(arraynb))
+# print(min(arraynb))
+# print(sum(arraynb))
+
+trueonly = [ True, True, True]
+# print(all(trueonly))
+
+trueandfalse = [ True, True, False]
+# print(all(trueandfalse))
+# print(any(trueandfalse))
+
+# print(input())
+
+
+# Print a string with variables
+x = 10
+city = 'Paris'
+message = f'La température est de {x} degrés à {city}'
+message2 = 'La température est de {} degrés à {}'.format(x, city)
+# print(message)
+# print(message2)
+
+# Create a file in current folder and write in it
+# f = open('file.txt', 'w')
+# f.write('Hello')
+# f.close()
+
+# Open a file in current folder and read its content
+# f = open('file.txt', 'r')
+# print(f.read())
+
+# Shortcut to avoid opening file for every use
+# with open('file.txt', 'r') as f:
+#     print(f.read())
+    
+# with open('file.txt', 'w') as f:
+#     for i in range(10):
+#         f.write("{}^2 = {} \n".format(i, i**2))
+
+# with open('file.txt', 'r') as f:
+#     print(f.read())
+
+
+# Exercise 7/30
+list_1 = []
+with open('file.txt', 'r') as f:
+    for line in f:
+        line = line.rstrip(' \n')
+        list_1.append(line)
+        
+print(list_1)
+        
+
+
