@@ -1,5 +1,5 @@
-# https://www.youtube.com/watch?v=mSh4h-J0z1c&list=PLO_fdPEVlfKqMDNmCFzQISI2H_nJcEDJq&index=8&ab_channel=MachineLearnia
-# 0'00
+# https://www.youtube.com/watch?v=NzDQTrqsxas&list=PLO_fdPEVlfKqMDNmCFzQISI2H_nJcEDJq&index=10&ab_channel=MachineLearnia# 0'00
+# 18'54'
 
 # print(False & True) => AND
 # print(False | True) => OR
@@ -360,9 +360,9 @@ import glob
 # Gets all the files with a specific extension
 # print(glob.glob("*.txt"))
 
-# filenames = glob.glob("*.txt")
 
 # Exercise 8/30
+filenames = glob.glob("*.txt")
 # for file in filenames:
 #     with open((file), 'r') as f:
 #         content = f.read()
@@ -370,9 +370,68 @@ import glob
 #             content = g.write(f"new {content}")
 #             g.close()
 
+
+# Correction
+# d = {}
+# print(d)
+
+# for file in filenames:
+#     with open((file), 'r') as f:
+#         d[file] = f.read().splitlines()
+# print(d)
+
 # Reads the content in all files with a specific extension at once 
 # for file in filenames:
 #     with open((file), 'r') as f:
 #         print(f.read())
 
-##### Pythpn POO and impact on Machine Learning
+##### Python POO and impact on Machine Learning
+
+
+##### Numpy Machine Learning
+
+## Create a one-dimensional array with some int values
+import numpy as np
+a = np.array([1, 2, 3])
+# print(a)
+
+## Checks the number of dimensions
+# print(a.ndim)
+
+## Checks the shape (number of lines, columns, and layers) of an array
+# print(a.shape)
+
+## Checks the size of an array
+# print(a.size)
+
+## Create a two-dimensional array with some zeros
+b = np.zeros((3, 6, 2))
+# print(b)
+
+## Create a three-dimensional array with some ones
+c = np.ones((3, 6, 2))
+# print(c)
+# print(c.size)
+
+d = np.zeros((3, 2))
+# print(d)
+
+e = np.ones((3, 2))
+# print(e)
+
+## Concatenate two arrays vertically - two methods
+f = np.concatenate((d, e), axis=0)
+# f = np.vstack((d, e))
+print(f)
+# print(f.shape)
+
+## Concatenate two arrays horizontally - two methods
+# g = np.hstack((d, e))
+g = np.concatenate((d, e), axis=1)
+# print(g)
+# print(g.shape)
+
+## Concatenate three arrays
+h = np.concatenate((b, c), axis=2)
+print(h)
+print(h.shape)
