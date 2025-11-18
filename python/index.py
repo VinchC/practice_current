@@ -1,5 +1,5 @@
-# https://www.youtube.com/watch?v=5UOSiCPu5aM&list=PLO_fdPEVlfKqMDNmCFzQISI2H_nJcEDJq&index=4&ab_channel=MachineLearnia
-# 5'37
+# https://www.youtube.com/watch?v=NzDQTrqsxas&list=PLO_fdPEVlfKqMDNmCFzQISI2H_nJcEDJq&index=10&ab_channel=MachineLearnia# 0'00
+# 18'54'
 
 # print(False & True) => AND
 # print(False | True) => OR
@@ -11,7 +11,6 @@ f = lambda x, y: x**2 + y
 # print(f(4, 3))
 
 # Usual way to create a function
-
 def e_potential(mass, height, e_limit=100, g=9.81):
     E = mass * height * g
     if E == e_limit:
@@ -56,25 +55,13 @@ def sign(x: float):
 # while x < y:
     # print(x)
     # x += 1
-    
-def fibo(n: float):
-    a = 0
-    b = 1
-    
-    list_fibo = []
-    
-    while a < n:
-        list_fibo.append(a)
-        a, b = b, a+b
-    print(list_fibo)
-        
-# fibo(1000)
+
 
 # Data structures: sequences
 
 ##### Lists
 # list_1 = [1, 3, 7, 9, 12, 16, 30, 65, 86] # May be modified
-cities = ['Paris', 'Berlin', 'Londres', 'Bruxelles', 'New York']
+# cities = ['Paris', 'Berlin', 'Londres', 'Bruxelles', 'New York']
 # list_2 = [ list_1, cities]
 
 # print(list_2)
@@ -144,24 +131,24 @@ cities = ['Paris', 'Berlin', 'Londres', 'Bruxelles', 'New York']
 ##### Dictionaries
 
 # Create a dico with couple key-value where values are string and number
-trad = {
-    "chien": "dog",
-    "chat": "cat",
-    "souris": "mouse",
-    "oiseau": "bird",
-    }
+# trad = {
+#     "chien": "dog",
+#     "chat": "cat",
+#     "souris": "mouse",
+#     "oiseau": "bird",
+#     }
 
-inventory = {
-    "bananas": 2,
-    "apples": 3,
-    "peach": 4,
-    }
+# inventory = {
+#     "bananas": 2,
+#     "apples": 3,
+#     "peach": 4,
+#     }
 
 # Create a dico with couple key-value where values are dictionaries
-dictionary_3 = {
-    "dictionary_1": trad,
-    "dictionary_2": inventory,
-    }
+# dictionary_3 = {
+#     "dictionary_1": trad,
+#     "dictionary_2": inventory,
+#     }
 
 # Print all values (not keys) of a dictionnary
 # print(inventory.values())
@@ -170,7 +157,7 @@ dictionary_3 = {
 # print(inventory.keys())
 
 # Add a couple key-value in a dictionary
-inventory["orange"] = 5
+# inventory["orange"] = 5
 
 # print(inventory)
 
@@ -200,22 +187,251 @@ inventory["orange"] = 5
 # for a, b in inventory.items():
 #     print(a, b)
     
-workbook = {
-    "positive" : [],
-    "negative" : [],
-    }
+# workbook = {
+#     "positive" : [],
+#     "negative" : [],
+#     }
 
-print(workbook)
+# print(workbook)
 
-nb = [-3, -2, -1, 0, 1, 2, 3]
+# nb = [-3, -2, -1, 0, 1, 2, 3]
 
-def sortnumbers(destination, nblist):
-    for i in nblist:
-        if i >= 0:
-            destination["positive"].append(i)
-        else:
-            destination["negative"].append(i)
+# def sortnumbers(destination, nblist):
+#     for i in nblist:
+#         if i >= 0:
+#             destination["positive"].append(i)
+#         else:
+#             destination["negative"].append(i)
+#     return destination
 
-sortnumbers(workbook, nb)
+# sortnumbers(workbook, nb)
 
-print(workbook)
+# print(workbook)
+
+
+##### List and Dict Comprehension
+
+# list_1 = []
+
+# for i in range(10):
+#     list_1.append(i**2)
+# print(list_1)
+
+# List Comprehension syntax
+# list_2 = [i**2 for i in range(15)]
+# print(list_2)
+
+# list_3 = [[i for i in range(3)] for j in range(4)]
+# print(list_3)
+
+
+# Dict Comprehension syntax 
+# firstnames = ['Pierre', 'Jean', 'Julie', 'Sophie']
+
+# ages = [16, 17, 18, 19]
+
+# Create a list with a couple k-v via an existing list and k as index
+# diconames = { k:v for k, v in enumerate(firstnames)}
+# print(diconames)
+
+# Create a list with a couple k-v via two existing lists
+# diconameswithages = { firstname:age for firstname, age in zip(firstnames, ages)}
+# print(diconameswithages)
+
+# Create a list with a couple k-v via two existing lists with a condition
+# dicoadults = { firstname:age for (firstname, age) in zip(firstnames, ages) if age >= 18}
+# print(dicoadults)
+
+# Generate an object
+# tuple_1 = tuple((i**2 for i in range(20)))
+# print(tuple_1)
+
+# Exercise 6/30
+# kvdict = { k:v for k, v in enumerate(tuple_1) if k <= 21 }
+# kvdict = { str(k): k**2 for k in range(0,20)}
+# print(kvdict)
+
+##### Built-in functions (7/30)
+# Change type of a variable
+# x = 10
+# print(type(x))
+# print(type(float(x)))
+# print(type(str(x)))
+
+# Get specific values or sum of an array
+# arraynb = [ 1, 2, 3, 4]
+# print(type(arraynb))
+# print(max(arraynb))
+# print(min(arraynb))
+# print(sum(arraynb))
+
+# trueonly = [ True, True, True]
+# print(all(trueonly))
+
+# trueandfalse = [ True, True, False]
+# print(all(trueandfalse))
+# print(any(trueandfalse))
+
+# print(input())
+
+
+# Print a string with variables
+# x = 10
+# city = 'Paris'
+# message = f'La température est de {x} degrés à {city}'
+# message2 = 'La température est de {} degrés à {}'.format(x, city)
+# print(message)
+# print(message2)
+
+# Create a file in current folder and write in it
+# f = open('file.txt', 'w')
+# f.write('Hello')
+# f.close()
+
+# Open a file in current folder and read its content
+# f = open('file.txt', 'r')
+# print(f.read())
+
+# Shortcut to avoid opening file for every use
+# with open('file.txt', 'r') as f:
+#     print(f.read())
+    
+# with open('file.txt', 'w') as f:
+#     for i in range(10):
+#         f.write("{}^2 = {} \n".format(i, i**2))
+
+# with open('file.txt', 'r') as f:
+#     print(f.read())
+
+
+# Exercise 7/30
+# list_1 = []
+# with open('file.txt', 'r') as f:
+#     for line in f:
+#         line = line.rstrip(' \n')
+#         list_1.append(line)
+
+# Correction
+# list_1 = [line.strip() for line in open('file.txt', 'r')]
+# print(list_1)
+        
+##### Modules and packages (8/30)
+
+## Imports all variables and functions from a specific file
+# import func as p1
+        
+# p1.fibo(1000)
+
+## Imports a specific function from a specific file
+# from func import fibo
+        
+# fibo(2000)
+
+import math # math (!) - pi, cos, sin, exp etc.
+# print(math.cos(2*math.pi))
+# print(math.exp(2))
+
+import statistics # mean(= moyenne), variance
+list_1 = [ 1, 2, 4, 9]
+# print(statistics.mean(list_1))
+# print(statistics.variance(list_1))
+
+import random # random values or effects, shuffle (=mélange)
+# Chooses a random value in a list
+# print(random.choice(list_1))
+
+# print(random.random()) # float value between 0 and 1
+# print(random.randint(5, 10)) # integer value between the values as parameters
+# print(random.randrange(100)) # integer value in range between 0 and value as parameter
+# print(random.sample(range(100), 10)) # select random 10 values in range 100
+# print(random.sample(range(100), random.randrange(10))) # select randomly between 0 and 10 random value(s) in range 100
+# print(list_1)
+# random.shuffle(list_1)
+# print(list_1)
+
+import os
+# Gets the current working directory
+# print(os.getcwd())
+
+# Gets the names of the files in current directory
+import glob
+# Gets all the files
+# print(glob.glob("*"))
+# Gets all the files with a specific extension
+# print(glob.glob("*.txt"))
+
+
+# Exercise 8/30
+filenames = glob.glob("*.txt")
+# for file in filenames:
+#     with open((file), 'r') as f:
+#         content = f.read()
+#         with open((file), 'w') as g:
+#             content = g.write(f"new {content}")
+#             g.close()
+
+
+# Correction
+# d = {}
+# print(d)
+
+# for file in filenames:
+#     with open((file), 'r') as f:
+#         d[file] = f.read().splitlines()
+# print(d)
+
+# Reads the content in all files with a specific extension at once 
+# for file in filenames:
+#     with open((file), 'r') as f:
+#         print(f.read())
+
+##### Python POO and impact on Machine Learning
+
+
+##### Numpy Machine Learning
+
+## Create a one-dimensional array with some int values
+import numpy as np
+a = np.array([1, 2, 3])
+# print(a)
+
+## Checks the number of dimensions
+# print(a.ndim)
+
+## Checks the shape (number of lines, columns, and layers) of an array
+# print(a.shape)
+
+## Checks the size of an array
+# print(a.size)
+
+## Create a two-dimensional array with some zeros
+b = np.zeros((3, 6, 2))
+# print(b)
+
+## Create a three-dimensional array with some ones
+c = np.ones((3, 6, 2))
+# print(c)
+# print(c.size)
+
+d = np.zeros((3, 2))
+# print(d)
+
+e = np.ones((3, 2))
+# print(e)
+
+## Concatenate two arrays vertically - two methods
+f = np.concatenate((d, e), axis=0)
+# f = np.vstack((d, e))
+print(f)
+# print(f.shape)
+
+## Concatenate two arrays horizontally - two methods
+# g = np.hstack((d, e))
+g = np.concatenate((d, e), axis=1)
+# print(g)
+# print(g.shape)
+
+## Concatenate three arrays
+h = np.concatenate((b, c), axis=2)
+print(h)
+print(h.shape)
