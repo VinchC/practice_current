@@ -1,16 +1,17 @@
-const arr = ['flick', 'chocolate', 'adventure', 'sunshine'];
+const a = "a";
+const b = ":";
 
-function flickSwitch(arr) {
-  let a = [];
-  let newSwitch = true;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "flick") {
-      newSwitch = !newSwitch;
-    }
-    a.push(newSwitch);
+function sameCase(a, b) {
+  if (a.match(/[^a-zA-Z]/i) || b.match(/[^a-zA-Z]/i)) {
+    return -1;
+  } else if (
+    (a === a.toUpperCase() && b === b.toUpperCase()) ||
+    (a === a.toLowerCase() && b === b.toLowerCase())
+  ) {
+    return 1;
+  } else {
+    return 0;
   }
-
-  return a;
 }
 
-console.log(flickSwitch(arr));
+console.log(sameCase(a, b));

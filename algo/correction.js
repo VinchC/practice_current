@@ -1,3 +1,19 @@
+// https://www.codewars.com/kata/5dd462a573ee6d0014ce715b/solutions/javascript
+function sameCase(a, b) {
+  if (a.match(/[^a-zA-Z]/i) || b.match(/[^a-zA-Z]/i)) {
+    return -1;
+  } else if (
+    (a === a.toUpperCase() && b === b.toUpperCase()) ||
+    (a === a.toLowerCase() && b === b.toLowerCase())
+  ) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+console.log(sameCase(a, b));
+
 // https://www.codewars.com/kata/64fbfe2618692c2018ebbddb/train/javascript
 const arr = ["flick", "chocolate", "adventure", "sunshine"];
 
@@ -738,7 +754,7 @@ console.log(
     [12, 2],
     [6, 1],
     [7, 10],
-  ])
+  ]),
 );
 
 // https://www.codewars.com/kata/5839edaa6754d6fec10000a2/train/typescript
